@@ -1,0 +1,80 @@
+.hero {
+  padding: 4rem;
+}
+
+.hero__content {
+  display: flex;
+  gap: 8rem;
+  justify-content: space-between;
+}
+
+.hero__text-area {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero__title {
+  font-size: 44pt;
+  color: #6057cf;
+  font-family: "Crimson Pro";
+  font-weight: 500;
+  max-width: 560px;
+}
+
+.hero__description {
+  color: #847ff5;
+  font-size: 14pt;
+  max-width: 560px;
+}
+
+.hero__image-area {
+  max-width: 440px;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.feedback {
+  padding: 4rem;
+}
+
+.feedback__content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1rem;
+  justify-items: center;
+}
+
+.feedback__card {
+  gap: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 2rem;
+  max-width: 328px;
+  height: 360px;
+  border-radius: 1rem;
+  background: linear-gradient(180deg, #ffffff, #e3e2fa);
+}
+
+.feedback__card {
+  color: #6057cf;
+}
+
+.card__image {
+  width: 8rem;
+}
+
+.card__user {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__stars {
+  color: #847ff5;
+}

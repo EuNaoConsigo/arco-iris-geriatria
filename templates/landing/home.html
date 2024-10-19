@@ -1,18 +1,48 @@
-{% extends "globals/base.html" %} 
-{% load static %} 
-{% block content %} 
-{% include 'globals/header.html' %}
+{% extends "globals/base.html" %} {% load static %} {% block content %}
+{%include 'globals/header.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>oi</h1>
-  </body>
-</html>
+<section class="hero">
+  <div class="hero__content">
+    <div class="hero__text-area">
+      <h1 class="hero__title">
+        Um Lar de Conforto e Dignidade para Nossos Idosos
+      </h1>
+      <div class="hero__description">
+        Oferecemos cuidados especializados, ambientes acolhedores e uma equipe
+        dedicada para proporcionar bem-estar e qualidade de vida aos nossos
+        residentes.
+      </div>
+    </div>
+    <div class="hero__image-area">
+      <img
+        class="hero__image"
+        src="{% static 'landing/imgs/heroImage.png' %}"
+      />
+    </div>
+  </div>
+</section>
+<section class="feedback">
+  <div class="feedback__content">
+    {% for avaliacao in avaliacoes %}
+    <div class="feedback__card">
+      <div class="card__user">
+        <img
+          class="card__image"
+          src="{{ avaliacao.imagem.url }}"
+          alt="{{ avaliacao.nome }}"
+          width="100"
+        />
+        <h2>{{ avaliacao.nome }}</h2>
+        <div class="card__stars">
+          {% for estrela in avaliacao.stars_range %}
+          <span class="material-symbols-outlined"> star </span>
+          {% endfor %}
+        </div>
+      </div>
+      <p>{{ avaliacao.avaliacao }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
 
 {% endblock content %} {% with page="home" %} {% endwith %}
