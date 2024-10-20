@@ -1,52 +1,88 @@
 .header {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .header__top {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    width: 100%;
-    background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  background-color: var(--primary-color);
 }
 
 .header__top__link {
-    display: flex;
-    align-items: center;
-    color: #fafafa;
-    text-decoration: none;
-    gap: .5rem;
+  display: flex;
+  color: #fafafa;
+  align-items: center;
+  text-decoration: none;
+  gap: 0.5rem;
 }
 
 .header__top__icon {
-    font-size: 1.6rem !important;
+  font-size: 1.6rem !important;
 }
 
 .header__bottom {
-    padding: 1rem;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    height: 60px;
-    width: 100%;
-    border-bottom: 1px solid #E3E2FA;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+
+  width: 100%;
+  border-bottom: 1px solid #e3e2fa;
 }
 
 .header__logo {
-    width: 12.8rem;
-    padding-top: 1rem;
+  width: 10rem;
 }
 
 .header__bottom__about {
-    color: #6057CF;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 1rem; 
-    border: 2px solid #6057CF;
-    border-radius: .5rem;
-    display: flex;
-    align-items: center;
+  text-decoration: none;
+  border: 2px solid #6057cf;
+  color: #6057cf;
+  padding: 1rem;
+  border-radius: 0.5rem;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.header__bottom__about:hover {
+  background-color: #6057cf;
+  color: white;
+}
+
+/* Extra Pequeno (XS) */
+@media (max-width: 575.98px) {
+}
+
+/* Pequeno (SM) */
+@media (max-width: 576px) {
+  .header__top__link {
+    font-size: 9pt;
+  }
+
+  .header__logo {
+    width: 8rem;
+  }
+}
+
+/* Médio (MD) */
+@media (max-width: 768px) {
+}
+
+/* Grande (LG) */
+@media (max-width: 992px) {
+}
+
+/* Muito Grande (XL) */
+@media (max-width: 1200px) {
+}
+
+/* Extra Grande (XXL) */
+@media (max-width: 1400px) {
 }

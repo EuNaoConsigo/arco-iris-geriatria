@@ -34,6 +34,26 @@
   overflow: hidden;
 }
 
+.hero__learn-more {
+  background-color: #6057cf;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  width: 16rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.hero__learn-more:hover {
+  background-color: #847ff5;
+}
+
+.hero__learn-more__arrow {
+  font-size: 12pt !important;
+}
+
 .feedback {
   padding: 4rem;
 }
