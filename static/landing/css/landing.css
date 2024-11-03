@@ -15,17 +15,17 @@
 }
 
 .hero__title {
-  font-size: 44pt;
+  font-size: 80px;
   color: #6057cf;
   font-family: "Crimson Pro";
   font-weight: 500;
-  max-width: 560px;
+  max-width: 800px;
 }
 
 .hero__description {
   color: #847ff5;
-  font-size: 14pt;
-  max-width: 560px;
+  font-size: 25px;
+  max-width: 700px;
 }
 
 .hero__image-area {
@@ -213,7 +213,8 @@
   font-size: 50px;
   font-weight: bold;
   font-family: "Crimson Pro";
-  margin-bottom: 70px;
+  margin-bottom: 90px;
+  margin-top: 60px;
   
 }
 
@@ -232,6 +233,7 @@
   align-items: center;
   padding: 20px;
   background-color: #ffffff;
+  margin-top: 60px;
 }
 
 .about_us h1 {
@@ -314,7 +316,7 @@ margin: -10px;
 .galeriatitulo{
   color: #E665FA;
   font-size: 35px;
-  margin: 10px 20px 0 0;
+  margin: 60px 20px 0 0;
 }
 
 .galeriasubtitulo{
@@ -328,4 +330,72 @@ margin: -10px;
   width: 100%;
   height: 100%;
   object-fit: contain;
+
+}
+
+.galeria {
+  margin-bottom: 60px;
+}
+/* Footer */
+
+.footer{
+  background-color: #3831A1;
+  height: 100px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.footer__container{
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__subcontainer{
+  width: 55%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.footer__logo__casa{
+  height: 60px;
+  margin-right: 30px;
+  position:relative;
+  margin-left: -40px;
+}
+
+.footer__textos{
+  color: white;
+}
+
+.footer__textos__principal{
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0;
+}
+
+.footer__textos__sub{
+  margin: 0;
+}
+
+
+.footer__redes{
+  height: 100%;
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  margin-right: -100px;
+
+}
+
+.logo__rede{
+  height: 50%;
+  margin-left: 10px;
 }
