@@ -98,3 +98,67 @@
 .card__stars {
   color: #847ff5;
 }
+
+
+.recentnews {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  padding: 4rem;
+  background-color: var(--color-purple);
+}
+
+.recentnews__title {
+  color: var(--neutral-light);
+  font-family: "Crimson Pro";
+  font-size: 44pt;
+}
+
+.recentnews__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+  justify-items: center;
+
+}
+
+.recentnews__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.recentnews__card-news {
+  height: 360px;
+  width: 100%;
+  background-color: var(--neutral-light);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.recentenews__textarea {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 200px);
+}
+
+.recentenews__link {
+  text-decoration: none;
+}
+
+.recentenews__date {
+  text-align: end;
+}
+
+.recentenews__title {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.recentenews__title-h3 {
+  font-size: 18pt;
+  font-weight: bold;
+}

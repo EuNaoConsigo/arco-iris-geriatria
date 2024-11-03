@@ -1,0 +1,38 @@
+.news {
+    display: flex;
+    justify-content: center;   
+}
+
+.news__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 1080px;
+}
+
+.news__textarea {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+}
+
+
+.news__title {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--color-purple);
+}
+
+.news__details {
+    color: var(--color-gray);
+}
+
+.news__image {
+    border-radius: 8px;
+}
+
+.news__text {
+    font-size: 18px;
+    line-height: 24px;
+}

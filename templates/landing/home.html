@@ -1,4 +1,6 @@
-{% extends "globals/base.html" %} {% load static %} {% block content %}
+{% extends "globals/base.html" %}
+{% load static %}
+{% block content %}
 {%include 'globals/header.html' %}
 
 <section class="hero">
@@ -47,6 +49,30 @@
       </div>
       <p>{{ avaliacao.avaliacao }}</p>
     </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="recentnews">
+  <h1 class="recentnews__title">Notícias Recentes</h1>
+  <div class="recentnews__content">
+    {% for noticia in ultimas_noticias %}
+    <div class="recentnews__card-news">
+      <a class="recentenews__link" href="{% url 'artigo_detail' noticia.tipo noticia.slug %}">
+        {% if noticia.imagem %}
+          <img class="recentnews__image" src="{{ noticia.imagem.url }}" alt="{{ noticia.titulo }}" />
+        {% endif %}
+        <div class="recentenews__textarea">
+          <div class="recentenews__title">
+            <h3 class="recentenews__title-h3">{{ noticia.titulo }}</h3>
+            <p class="recentenews__text">{{ noticia.subtitulo }}</p>
+          </div>
+          <p class="recentenews__date" class="recentnews__date">Publicado em: {{ noticia.format_data_publicacao }}</p>
+        </div>
+      </a>
+    </div>
+    {% empty %}
+      <div class="recentnews__no-news">Não há notícias recentes disponíveis.</div> 
     {% endfor %}
   </div>
 </section>

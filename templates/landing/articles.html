@@ -1,0 +1,20 @@
+{% extends "globals/base.html" %} 
+{% load static %}
+{% block content %}
+{% include 'globals/header.html' %}
+
+<section class="news">
+  <div class="news__content">
+    <div class="news__textarea">
+      <h1 class="news__title">{{ article.titulo }}</h1>
+      <p class="news__subtitle">{{ article.subtitulo }}</p>
+      <p class="news__details">{{ article.format_data_publicacao }}</p>
+    </div>
+    {% if article.imagem %}
+    <img class="news__image" src="{{ article.imagem.url }}" alt="{{ article.titulo }}" />
+    {% endif %}
+    <div class="news__text">{{ article.conteudo|safe }}</div>
+  </div>
+</section>
+
+{% endblock content %}
