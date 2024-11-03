@@ -14,12 +14,7 @@
         dedicada para proporcionar bem-estar e qualidade de vida aos nossos
         residentes.
       </div>
-      <a class="hero__learn-more">
-        Fale conosco
-        <span class="material-symbols-outlined hero__learn-more__arrow">
-          arrow_forward_ios
-        </span>
-      </a>
+    
     </div>
     <div class="hero__image-area">
       <img
@@ -35,7 +30,7 @@
 <!-- Nossos Serviços -->
 
 <h1 class= title-square> Nossos Serviços </h1>
-<section class="section"> <!--mudar esta classe-->
+<section class="section"> 
 
   <div class="square">
     <img
@@ -45,7 +40,7 @@
     <h1>Enfermaria</h1>
     <p>Nossa casa possui uma 
       enfermaria com remedios e 
-      produtos para nosso idosos</p>
+      produtos para nossos idosos.</p>
   </div>
   <div class="square">
     <img
@@ -54,9 +49,8 @@
       />
     <h1>Cuidadores</h1>
     <p>Na arco-íris temos cuidadores
-      especializado em tratar os 
-      idosos e garantir um excelente
-      tratamento</p>
+      especializados e que garantem um excelente
+      tratamento.</p>
   </div>
   <div class="square">
     <img
@@ -66,40 +60,70 @@
     <h1>Higiene</h1>
     <p>Disponibilizamos produtos 
       de higiene e cuidados pessoais
-      gratuítos</p>
+      gratuítos.</p>
   </div>
 </section>
 
-<!-- quem nos somos -->
+<!-- Quem Nos Somos -->
 
-<section class=> <!-- fazer estilização -->
-  <div class=>
-    <div class=>
-      <h1 class=>
-        Quem somos Nós
-      </h1>
-      <div class=>
+<section class="about_us">
+  <div class="text-section">
+    <h1>Quem somos Nós</h1>
+    <p>
       Com mais de 15 anos de experiência no cuidado de idosos, a casa geriátrica Arco-íris se destaca por oferecer um serviço de excelência.
-       O Uracy, tem a honra de liderar essa equipe dedicada, que trabalha incansavelmente para garantir o bem-estar dos nosso residentes. 
-       Nossa estrutura foi projetada pensando em cada detalhe, com espaços amplos e bem iluminados, área de convivência agradáveis e um jardim exuberante.
-       Contamos com uma equipe multidisciplinar altamente qualificada. Nossa missão é proporcionar qualidade de vida, bem-estar e muito carinho aos nossos residentes.
-    <div class="">
-      <img
-        class=""
-        src="{% static 'landing/imgs/AboutUs1.png' %}" />
-    </div>
-    <div>
-      <img
-      class=""
-      src="{% static 'landing/imgs/AboutUs2.png' %}" />
-      <img
-       class=""
-       src="{% static 'landing/imgs/AboutUs3.png' %}" />
-    </div>
+      O Uracy, tem a honra de liderar essa equipe dedicada, que trabalha incansavelmente para garantir o bem-estar dos nossos residentes.
+      Nossa estrutura foi projetada pensando em cada detalhe, com espaços amplos e bem iluminados, áreas de convivência agradáveis e um jardim exuberante.
+      Contamos com uma equipe multidisciplinar altamente qualificada. Nossa missão é proporcionar qualidade de vida, bem-estar e muito carinho aos nossos residentes.
+    </p>
+  </div>
+  <div class="center-image">
+    <img src="{% static 'landing/imgs/AboutUs1.png' %}" />
+  </div>
+  <div class="right-column">
+    <img src="{% static 'landing/imgs/AboutUs2.png' %}" />
+    <img src="{% static 'landing/imgs/AboutUs3.png' %}" />
   </div>
 </section>
 
-<!-- final das partes que estão em Desenvolvimento -->
+<!-- Carrossel-->
+
+<section class="galeria">
+
+
+  <div class="galeriatextcontainer">
+      <h2 class="galeriatitulo">Nosso Ambiente</h2>
+      <p class="galeriasubtitulo">Nosso ambiente possui as melhores condições para seu bem estar !</p>
+  </div>
+
+
+  <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+          <div class="swiper-slide">
+              <img class="galeriaimg" src="{% static 'landing/imgs/img-1.jpg' %}" >
+          </div>
+          <div class="swiper-slide">
+              <img class="galeriaimg" src="{% static 'landing/imgs/img-3.jpg' %}" >
+          </div>
+          <div class="swiper-slide">
+              <img class="galeriaimg" src="{% static 'landing/imgs/img-8.jpeg' %}" >
+          </div>
+          <div class="swiper-slide">
+              <img class="galeriaimg" src="{% static 'landing/imgs/img-5.webp' %}" >
+          </div>
+          <div class="swiper-slide">
+              <img class="galeriaimg" src="{% static 'landing/imgs/img-7.webp' %}" >
+          </div>
+          <div class="swiper-slide">
+              <img class="galeriaimg" src="{% static 'landing/imgs/img-9.webp' %}" >
+          </div>
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-pagination"></div>
+  </div>
+
+</section>
+<!-- Feedback -->
 
 <section class="feedback">
   <div class="feedback__content">
@@ -125,6 +149,8 @@
   </div>
 </section>
 
+<!-- Notícias -->
+
 <section class="recentnews">
   <h1 class="recentnews__title">Notícias Recentes</h1>
   <div class="recentnews__content">
@@ -148,5 +174,31 @@
     {% endfor %}
   </div>
 </section>
+
+<!-- Script Carrossel-->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: false,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+    });
+</script> 
 
 {% endblock content %} {% with page="home" %} {% endwith %}
