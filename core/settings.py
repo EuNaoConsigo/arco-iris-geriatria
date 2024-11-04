@@ -139,7 +139,7 @@ CKEDITOR_CONFIGS = {
         'toolbar_Custom': [
             ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript'],
             ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent'],
-            ['Link', 'Unlink', 'Image', 'Table'],
+            ['Link', 'Unlink', 'Table'],
             ['Source'],
         ],
         'height': 300,
