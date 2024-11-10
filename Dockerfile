@@ -4,10 +4,22 @@ FROM python:3.11-slim
 # Definir diretório de trabalho
 WORKDIR /app
 
-# Copiar arquivos de dependências
+# Instalar dependências do sistema necessárias para compilar algumas bibliotecas Python (se necessário)
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Criar um ambiente virtual para evitar o uso de pip como root
+RUN python3 -m venv /venv
+
+# Definir o ambiente para usar o venv
+ENV PATH="/venv/bin:$PATH"
+
+# Copiar o arquivo de dependências
 COPY requirements.txt /app/
 
-# Instalar dependências
+# Instalar as dependências no ambiente virtual
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copiar o código da aplicação para o contêiner
@@ -23,4 +35,4 @@ RUN python manage.py collectstatic --noinput
 EXPOSE 8000
 
 # Comando para rodar o servidor em produção
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "your_project_name.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "core.wsgi:application"]
