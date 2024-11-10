@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-5+)v$)@y!@p)!)%=2nnhm+bmim4zyancbq&w&o7i640y2+@gx7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'arco-iris-geriatria.onrender.com'
+]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
