@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import mimetypes
 from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -33,6 +34,17 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # Application definition
+
+# Adicionar tipos MIME personalizados, se necessário
+mimetypes.add_type("application/font-woff2", ".woff2")
+mimetypes.add_type("application/font-woff", ".woff")
+mimetypes.add_type("application/javascript", ".js")
+mimetypes.add_type("text/css", ".css")
+mimetypes.add_type("image/svg+xml", ".svg")
+mimetypes.add_type("image/png", ".png")
+mimetypes.add_type("image/jpeg", ".jpg")
+mimetypes.add_type("image/gif", ".gif")
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
