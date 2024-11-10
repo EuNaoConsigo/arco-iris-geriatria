@@ -1,0 +1,182 @@
+{% extends "globals/base.html" %}
+{% load static %} {% block content %}
+{% include 'globals/header.html' %}
+
+<style>
+  .contact-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+
+  .contact-section h1,
+  .contact-section h2 {
+    color: var(--color-purple);
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* Parágrafos */
+  .contact-section p {
+    color: var(--neutral-dark);
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  /* Título da seção "Estamos de portas abertas!" */
+  .contact-section h2 {
+    color: var(--primary-dark);
+    margin-top: 40px;
+  }
+
+  /* Formulário de Contato */
+  .contact-section form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--neutral-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Estilo dos campos de formulário */
+  .contact-section .form-group {
+    margin-bottom: 20px;
+  }
+
+  .contact-section label {
+    font-size: 1.1em;
+    color: var(--color-purple);
+  }
+
+  .contact-section input[type="text"],
+  .contact-section input[type="email"],
+  .contact-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    font-size: 1em;
+    border: 2px solid var(--primary-light);
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: var(--color-gray);
+    color: var(--neutral-dark);
+  }
+
+  .contact-section input[type="text"]:focus,
+  .contact-section input[type="email"]:focus,
+  .contact-section textarea:focus {
+    border-color: var(--color-purple);
+    outline: none;
+  }
+
+  /* Botão de envio do formulário */
+  .contact-section button {
+    background-color: var(--color-purple);
+    color: var(--neutral-light);
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+  }
+
+  .contact-section button:hover {
+    background-color: var(--primary-dark);
+  }
+
+  /* Estilização do Mapa */
+  .container {
+    width: 50%;
+  }
+
+  .map-container {
+    margin-top: 40px;
+    max-width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .map-container iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+    border-radius: 8px;
+  }
+</style>
+
+<section class="contact-section">
+  <div class="container">
+    <h1 style="font-weight: bold">Contato</h1>
+
+    <p>
+      Se você está em busca de um ambiente acolhedor e seguro para um ente
+      querido, a Casa Geriátrica Arco-íris é o lugar ideal. Com mais de 15 anos
+      de experiência no cuidado de idosos, nossa equipe, liderada por Uracy,
+      está comprometida em oferecer um serviço de excelência.
+    </p>
+    <p>
+      Nossos espaços são projetados com atenção aos detalhes, proporcionando
+      conforto e segurança. Contamos com uma equipe multidisciplinar altamente
+      qualificada, pronta para atender às necessidades de cada residente.
+    </p>
+
+    <h2 style="color: var(--color-purple); font-weight: bold">
+      Estamos de portas abertas!
+    </h2>
+    <p>
+      A Casa Geriátrica Arco-íris adora receber visitantes! Venha conhecer nossa
+      estrutura, que foi cuidadosamente planejada para o conforto e bem-estar
+      dos nossos residentes. Nossa equipe está à disposição para mostrar as
+      áreas de convivência, nosso lindo jardim e responder a todas as suas
+      perguntas.
+    </p>
+    <p>
+      Entre em contato para agendar sua visita e descubra como podemos cuidar do
+      seu ente querido com todo o carinho que ele merece!
+    </p>
+
+    <h2 style="color: var(--color-purple); font-weight: bold">
+      Nosso Endereço
+    </h2>
+    <p>Rua Professor José Cândido Pessoa, 482, bairro Novo, Olinda, Brasil</p>
+
+    <!-- Google Maps Embed API -->
+    <div class="map-container" style="width: 100%; height: 450px">
+      <div id="mapid" style="height: 100%"></div>
+    </div>
+  </div>
+</section>
+<!-- Adicionar Leaflet.js via CDN -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+/>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script>
+  // Inicializa o mapa
+  var map = L.map("mapid").setView([-8.037, -34.893], 15); // Coordenadas de Olinda, ajuste conforme necessário
+
+  // Adiciona o mapa do OpenStreetMap como camada base
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }).addTo(map);
+
+  // Adiciona um marcador no local
+  L.marker([-8.037, -34.893])
+    .addTo(map)
+    .bindPopup(
+      "<b>Casa Geriátrica Arco-íris</b><br>Rua Professor José Cândido Pessoa, 482, Bairro Novo, Olinda, Brasil."
+    )
+    .openPopup();
+</script>
+
+{% endblock content %}

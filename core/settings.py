@@ -24,10 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-5+)v$)@y!@p)!)%=2nnhm+bmim4zyancbq&w&o7i640y2+@gx7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
-    'arco-iris-geriatria.onrender.com'
+    'arco-iris-geriatria.onrender.com',
+    '127.0.0.1:8000',
+    '127.0.0.1',
+    'localhost'
 ]
 
 MEDIA_URL = '/media/'
