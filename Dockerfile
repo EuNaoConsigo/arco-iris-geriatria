@@ -1,23 +1,26 @@
-FROM python:3.9-slim
+# Usar uma imagem base com Python 3
+FROM python:3.11-slim
 
-# Definir o diretório de trabalho
+# Definir diretório de trabalho
 WORKDIR /app
 
-# Instalar dependências do sistema necessárias
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends gcc libpq-dev && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
-# Copiar o arquivo de requisitos para o container
+# Copiar arquivos de dependências
 COPY requirements.txt /app/
 
-# Atualizar o pip e instalar as dependências do requirements.txt
-RUN pip install --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
+# Instalar dependências
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Copiar o código do seu projeto para o container
+# Copiar o código da aplicação para o contêiner
 COPY . /app/
 
-# Rodar comandos para aplicar migrações, coletar arquivos estáticos e iniciar o Gunicorn
-CMD ["bash", "-c", "python manage.py migrate && python manage.py collectstatic --noinput && gunicorn core.wsgi:application --bind 0.0.0.0:8000"]
+# Definir variáveis de ambiente
+ENV PYTHONUNBUFFERED 1
+
+# Coletar arquivos estáticos para produção
+RUN python manage.py collectstatic --noinput
+
+# Expor a porta que o servidor vai rodar
+EXPOSE 8000
+
+# Comando para rodar o servidor em produção
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "your_project_name.wsgi:application"]
