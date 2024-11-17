@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+import environ
 import dj_database_url
 import mimetypes
 from pathlib import Path
@@ -102,18 +102,31 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-if not DEBUG: 
-    DATABASES= {
-        "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
-    }
+env = environ.Env()
+environ.Env.read_env()
 
-else:
-    DATABASES = {
+DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST'),
+        'PORT': env('DB_PORT'),
     }
+}
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'my_database_9fy7',
+        'USER': 'my_database_9fy7_user',
+        'PASSWORD': 'wQdaumtcI6JNclAH65kelXC0PB3qVuRM',
+        'HOST': 'dpg-cssvjil2ng1s73apjls0-a',
+        'PORT': '5432',
     }
+}
+
 
 
 # Password validation
