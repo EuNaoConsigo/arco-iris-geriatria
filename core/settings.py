@@ -111,12 +111,8 @@ else:
 
     DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'my_database_9fy7',
-        'USER': 'my_database_9fy7_user',
-        'PASSWORD': 'wQdaumtcI6JNclAH65kelXC0PB3qVuRM',
-        'HOST': 'dpg-cssvjil2ng1s73apjls0-a',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
     }
 
