@@ -28,6 +28,9 @@ COPY . /app/
 # Definir variáveis de ambiente
 ENV PYTHONUNBUFFERED 1
 
+# Rodar as migrações do banco de dados
+RUN python manage.py migrate --noinput
+
 # Coletar arquivos estáticos para produção
 RUN python manage.py collectstatic --noinput
 
