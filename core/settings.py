@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET KEY', 'django-insecure-5+)v$)@y!@p)!)%=2nnhm+bmim4zyancbq&w&o7i640y2+@gx7')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'True')=="True"
 
 ALLOWED_HOSTS = [
     'arco-iris-geriatria.onrender.com',
