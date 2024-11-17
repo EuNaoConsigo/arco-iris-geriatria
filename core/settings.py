@@ -30,7 +30,7 @@ ALLOWED_HOSTS = [
     'arco-iris-geriatria.onrender.com',
     '127.0.0.1:8000',
     '127.0.0.1',
-    'localhost'
+    'localhost',
     'arco-iris-geriatria-nqso.onrender.com'
 ]
 
