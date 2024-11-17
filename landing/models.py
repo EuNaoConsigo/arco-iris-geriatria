@@ -11,6 +11,8 @@ class Avaliacao(models.Model):
     avaliacao = models.TextField()
     estrelas = models.PositiveIntegerField(choices=[(i, i) for i in range(6)])
 
+    pass
+
     def __str__(self):
         return self.nome
 
