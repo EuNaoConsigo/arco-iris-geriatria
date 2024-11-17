@@ -114,8 +114,8 @@ else:
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'my_database_9fy7',
         'USER': 'my_database_9fy7_user',
-        'PASSWORD': 'your_password',
-        'HOST': 'your_host',
+        'PASSWORD': 'wQdaumtcI6JNclAH65kelXC0PB3qVuRM',
+        'HOST': 'dpg-cssvjil2ng1s73apjls0-a',
         'PORT': '5432',
     }
     }
