@@ -31,7 +31,6 @@ ENV PYTHONUNBUFFERED 1
 # Coletar arquivos estáticos para produção
 RUN python manage.py collectstatic --noinput
 
-RUN python manage.py migrate
 # Expor a porta que o servidor vai rodar
 EXPOSE 8000
 
